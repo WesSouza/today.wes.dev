@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="What day is it even?" />
+  <title>Today is</title>
+</head>
+
+<div id="day"></div>
+<footer>by <a href="https://twitter.com/__WesSouza">Wes</a></footer>
+
+<style>
+  html,
+  body {
+    font-family: "Comic Sans MS", "Chalkboard SE";
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #day {
+    font-size: 10em;
+  }
+  @media screen and (max-width: 950px) {
+    #day {
+      font-size: 4em;
+    }
+  }
+
+  footer {
+    position: absolute;
+    bottom: 10px;
+  }
+</style>
+<script>
+  const head = ["Mo", "Tue", "We", "Thu", "Fri", "Sa", "Su"];
+  const body = ["n", "s", "dnes", "rs", "tur", "n", ""];
+  const boring = ["Mon", "Tues", "Wednes", "Thurs", "Fri", "Satur", "Sun"];
+  let frankenstein = "";
+  do {
+    const headIndex = Math.floor(Math.random() * head.length);
+    const bodyIndex = Math.floor(Math.random() * body.length);
+    frankenstein = head[headIndex] + body[bodyIndex];
+  } while (boring.includes(frankenstein));
+  day.innerHTML = frankenstein + "day";
+  document.title += " " + frankenstein + "day";
+</script>
+
+<script
+  async
+  data-goatcounter="https://today.goatcounter.com/count"
+  src="//gc.zgo.at/count.js"
+></script>
